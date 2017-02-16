@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>个人简历</title>
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+    <link rel="stylesheet" href="css/reset.min.css"/>
+    <link rel="stylesheet" href="css/index.css"/>
+    <link rel="stylesheet" href="css/swiper.min.css"/>
+    <link rel="stylesheet" href="css/animate.css"/>
+    <script>
+        ~function(){
+            var desW=640,
+                    winW=document.documentElement.clientWidth;
+            if(winW>640){
+                return;
+            }
+            document.documentElement.style.fontSize=winW*100/desW+'px';
+
+        }();
+    </script>
+</head>
+<body>
+<section class="main">
+    <div class="music">
+        <audio src="http://res1.eqh5.com/group4/M00/C4/E9/yq0KYVcE8sqAcWmvAAvpLsPcUQ8317.mp3" loop preload="none" id="beyond">
+            <!--preload:none不提前进行预加载
+                       :auto提前进行预加载-->
+        </audio>
+    </div>
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide slide1">
+                <p>WEB前端开发工程师</p>
+                <img src="img/page-1.png" alt=""/>
+                <img src="img/page-2.png" alt=""/>
+                <img src="img/page-3.png" alt=""/>
+                <img src="img/page-4.png" alt=""/>
+                <img src="img/page-5.png" alt=""/>
+                <img src="img/page-4.png" alt=""/>
+                <img src="img/page-5.png" alt=""/>
+            </div>
+            <div class="swiper-slide slide2">
+                <img src="img/person1.png" alt=""/>
+                <img src="img/person2.png" alt=""/>
+                <img src="img/person3.png" alt=""/>
+            </div>
+            <div class="swiper-slide slide3">
+                <img src="img/person4.png" alt=""/>
+                <img src="img/skill-1.png" alt=""/>
+                <img src="img/skill-2.png" alt=""/>
+                <img src="img/skill-3.png" alt=""/>
+                <img src="img/skill-4.png" alt=""/>
+                <img src="img/skill-5.png" alt=""/>
+                <img src="img/skill-6.png" alt=""/>
+                <img src="img/skill-7.png" alt=""/>
+                <img src="img/skill-8.png" alt=""/>
+                <img src="img/skill-9.png" alt=""/>
+                <img src="img/skill-10.png" alt=""/>
+                <img src="img/exp-1.png" alt=""/>
+                <img src="img/exp-2.png" alt=""/>
+                <img src="img/exp-5.png" alt=""/>
+                <img src="img/exp-3.png" alt=""/>
+                <img src="img/exp-6.png" alt=""/>
+                <img src="img/exp-4.png" alt=""/>
+                <img src="img/exp-7.png" alt=""/>
+            </div>
+            <div class="swiper-slide slide4">
+                <img src="img/dream-1.png" alt=""/>
+                <img src="img/dream-1-1.png" alt=""/>
+                <img src="img/dream-1-2.png" alt=""/>
+                <img src="img/dream-1-3.png" alt=""/>
+                <img src="img/dream-1-4.png" alt=""/>
+                <img src="img/dream-1-5.png" alt=""/>
+                <img src="img/dream-1-6.png" alt=""/>
+                <img src="img/dream-1-7.png" alt=""/>
+                <img src="img/dream-1-8.png" alt=""/>
+                <img src="img/dream-1-9.png" alt=""/>
+                <img src="img/dream-1-10.png" alt=""/>
+            </div>
+            <div class="swiper-slide slide5">
+                <img src="img/work-1.png" alt=""/>
+                <img src="img/work-2.png" alt=""/>
+                <span>北京瑞乳贸易有限公司</span>
+                <span>北京东易正合有限公司</span>
+                <span>国美在线</span>
+                <p>1：负责公司产品的拍照 :2：负责公司
+                    的京东店铺、淘宝店铺产品图片处理和
+                    活动宣传图设计</p>
+                <p>直通车、钻展、海报、二级页、首页
+                    的图片和页面的设计 上传首页</p>
+                <p>负责公司web端和app端页面开发工作,与后台开发工程师配合, 对页面样式和
+                    交互效果进行分析和调试</p>
+            </div>
+            <div class="swiper-slide slide6">
+                <img src="img/last-1.png" alt=""/>
+                <img src="img/last-2.png" alt=""/>
+                <p>Name: 高彩霞</p>
+                <p>Phone: 18810854706</p>
+                <p>QQ: 1131559738</p>
+                <p>E-mail: 1131559738@qq.com</p>
+            </div>
+        </div>
+    </div>
+  <!--  <div id="audio_btn" style="display: block;">
+        <audio loop="" src="http://res1.eqh5.com/group4/M00/C4/E9/yq0KYVcE8sqAcWmvAAvpLsPcUQ8317.mp3" id="media" autoplay="" preload=""></audio>
+    </div>-->
+</section>
+</body>
+<script src="js/swiper.min.js"></script>
+<script>
+        var mySwiper=new Swiper(".swiper-container",{
+        direction:"vertical",
+        loop:true,
+        onTransitionEnd:function(swiper){
+            var slides=swiper.slides;
+            var curIndex=swiper.activeIndex;
+            var lastIndexSlide=slides.length-1;//现在的最后一个滑块
+            var trueIndexSlide=slides.length-2;//原来的最后一个滑块
+            /*把真实的第一个滑块复制了一份放在最后的位置，把真实的最后一个滑块复制了一份放在了第一个位置*/
+            [].forEach.call(slides,function(item,index){
+                item.id='';
+                if(curIndex===index){
+                    switch(index){
+                        case 0:
+                            item.id="page"+trueIndexSlide;
+                            break;
+                        case lastIndexSlide:
+                            item.id='page1';
+                            break;
+                        default :
+                            item.id='page'+curIndex;
+                    }
+                }
+            })
+        }
+    });
+
+    var music=document.querySelector('.music');
+    var beyond=document.querySelector('#beyond');
+    window.setTimeout(function(){
+        beyond.play();
+        beyond.addEventListener("canplay",function(){
+            music.className="music musicCur";
+
+        })
+    },1000);
+    music.addEventListener('click',function(){
+        //paused属性判断音频文件是播放的还是停止 beyond.paused=true;说明音频文件目前是停止播放的
+        if(beyond.paused){
+            beyond.play();
+            music.className+=" musicCur";
+        }else{
+            beyond.pause();
+            music.className="music";
+            music.style.opacity=1;
+        }
+    },false)
+</script>
+</html>
